@@ -2,6 +2,7 @@ package com.ammaryasser.cleanarchitectureapp.modules;
 
 import android.content.Context;
 
+import com.ammaryasser.cleanarchitectureapp.scopes.GithubApplicationScope;
 import com.squareup.picasso.OkHttp3Downloader;
 import com.squareup.picasso.Picasso;
 
@@ -13,6 +14,7 @@ import okhttp3.OkHttpClient;
 public class PicassoModule {
 
     @Provides
+    @GithubApplicationScope
     public Picasso providesPicasso(Context context, OkHttp3Downloader okHttp3Downloader) {
         return new Picasso.Builder(context)
                 .downloader(okHttp3Downloader)
@@ -20,6 +22,7 @@ public class PicassoModule {
     }
 
     @Provides
+    @GithubApplicationScope
     public OkHttp3Downloader providesOkhttpDownloader(OkHttpClient okHttpClient) {
         return new OkHttp3Downloader(okHttpClient);
     }

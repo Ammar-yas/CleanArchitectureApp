@@ -2,6 +2,8 @@ package com.ammaryasser.cleanarchitectureapp.modules;
 
 import android.content.Context;
 
+import com.ammaryasser.cleanarchitectureapp.scopes.GithubApplicationScope;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -15,6 +17,7 @@ public class ContextModule {
     }
 
     @Provides
+    @GithubApplicationScope
     public Context providesContext() {
         return context;
     }

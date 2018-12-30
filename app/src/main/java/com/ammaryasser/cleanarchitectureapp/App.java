@@ -20,9 +20,17 @@ public class App extends Application {
                 DaggerGithubApplicationComponent.builder()
                         .contextModule(new ContextModule(this))
                         .build();
-        GithubService githubService = githubApplicationComponent.getGithubService();
-        Picasso picasso = githubApplicationComponent.getPicasso();
-        Timber.e("Github service: %S", githubService);
-        Timber.e("Picasso %s", picasso);
+        GithubService githubService1 = githubApplicationComponent.getGithubService();
+        Picasso picasso1 = githubApplicationComponent.getPicasso();
+        GithubService githubService2 = githubApplicationComponent.getGithubService();
+        Picasso picasso2 = githubApplicationComponent.getPicasso();
+        GithubService githubService3 = githubApplicationComponent.getGithubService();
+        Picasso picasso3 = githubApplicationComponent.getPicasso();
+        Timber.e("Github service1: %S", githubService1);
+        Timber.e("Picasso1 %s", picasso1);
+        Timber.e("Github service1: %S", githubService2);
+        Timber.e("Picasso1 %s", picasso2);
+        Timber.e("Github service1: %S", githubService3);
+        Timber.e("Picasso1 %s", picasso3);
     }
 }
